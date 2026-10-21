@@ -1,5 +1,5 @@
 'use strict';
-const C=FleetCore,$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],yen=v=>new Intl.NumberFormat('ja-JP',{style:'currency',currency:'JPY',maximumFractionDigits:2}).format(v/100),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const C=FleetCore,$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],yen=v=>new Intl.NumberFormat('ja-JP',{style:'currency',currency:'JPY',maximumFractionDigits:2}).format((v||0)/100),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const state={entries:[],headers:[],files:[],demo:false,page:0,tab:'dashboard',selected:Object.fromEntries(C.categories.map(([k])=>[k,k!=='toll'])),missing:[],extra:[]};
 const STORAGE='fleet-note-v1';let storageEnabled=false;
 const tabs={dashboard:['OVERVIEW','配達のお金を、見やすく。','日々の売上から、口座の整理まで。ひと目で把握。','ダッシュボード'],transfer:['CASH & BANK','現金と口座を、すっきり。','受け取った現金を、事業口座へいくら移す？','口座振り込み計算'],tax:['RECORDS & EXPORT','一年の記録を、申告の準備に。','月ごとの数字を整理して、必要なCSVを手元に。','確定申告・CSV出力']};
