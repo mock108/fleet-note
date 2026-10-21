@@ -2,6 +2,8 @@
 
 Uberのpayments_order CSVを、ブラウザー内だけで整理するダッシュボードです。
 
+[公開サイトを開く](https://mock108.github.io/fleet-note/)
+
 ## 使い方
 
 GitHub Pagesを開き、「CSVを読み込む」からUberのCSVを選択します。複数ファイルを追加でき、同じ取引IDは1回だけ集計します。同一IDで内容が違う場合は取り込みを止めて知らせます。
